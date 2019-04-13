@@ -1,10 +1,12 @@
+package exam;
+
 import io.reactivex.Maybe;
 import kotlin.Pair;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class QueryTvSales {
+public class E2_QueryTvSales {
 
     public static void main(String[] args) {
 

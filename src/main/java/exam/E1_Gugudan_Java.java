@@ -1,7 +1,9 @@
+package exam;
+
 import io.reactivex.Observable;
 import io.reactivex.functions.Function;
 
-public class Gugudan_Java {
+public class E1_Gugudan_Java {
 
     public static void main(String[] args) {
 
