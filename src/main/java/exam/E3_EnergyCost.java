@@ -40,7 +40,7 @@ public class E3_EnergyCost {
             sb.append("사용한 전기량 : ").append(pair.getFirst()).append("\n")
                     .append("전기요금 :  ").append(new DecimalFormat("#,###").format(pair.getSecond())).append("\n")
                     .append("---------------------").append("\n");
-            Log.it(sb.toString());
+            Log.i(sb.toString());
         });
 
 

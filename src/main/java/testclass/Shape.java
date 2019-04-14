@@ -9,7 +9,7 @@ public class Shape {
     public static final String DIAMOND = "DIAMOND";
     public static final String PENTAGON = "PENTAGON";
     public static final String BALL = "BALL";
-    public static final String START = "START";
+    public static final String STAR = "STAR";
 
 
     public static String getColor(String shape) {
@@ -30,9 +30,13 @@ public class Shape {
         if (TRIANGLE.equals(shape)) return "T";
         if (DIAMOND.equals(shape)) return "<>";
         if (PENTAGON.equals(shape)) return "-P";
-        if (START.equals(shape)) return "-S";
+        if (STAR.equals(shape)) return "-S";
 
         return "";
+    }
+
+    public static String flip(String origin) {
+        return "(flipped)" + origin;
     }
 
 }
