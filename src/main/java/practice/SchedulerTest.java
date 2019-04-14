@@ -1,13 +1,17 @@
 package practice;
 
 import io.reactivex.Observable;
-import io.reactivex.Scheduler;
 import io.reactivex.schedulers.Schedulers;
+import okhttp3.*;
 import testclass.Shape;
 import util.CommonUtils;
 import util.Log;
+import util.OkHttpHelper;
 
 import java.io.File;
+import java.io.IOException;
+import java.util.concurrent.Executor;
+import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
 public class SchedulerTest {
@@ -80,9 +84,37 @@ public class SchedulerTest {
                 .subscribe(Log::i);
     }
 
+    public static void single() {
+        Observable<Integer> numbers = Observable.range(100, 5);
+        Observable<String> chars = Observable.range(0, 5)
+                .map(CommonUtils::numberToAlphabet);
+
+        numbers.subscribeOn(Schedulers.single())
+                .subscribe(Log::i);
+
+        chars.subscribeOn(Schedulers.single())
+                .subscribe(Log::i);
+        CommonUtils.sleep(500);
+
+    }
+
+    public static void executor() {
+
+        final int THREAD_NUM = 10;
+        String[] data = {"1", "3", "5"};
+        Observable<String> source = Observable.fromArray(data);
+        Executor executor = Executors.newFixedThreadPool(THREAD_NUM);
+
+        source.subscribeOn(Schedulers.from(executor))
+                .subscribe(Log::i);
+
+        source.subscribeOn(Schedulers.from(executor))
+                .subscribe(Log::i);
+        CommonUtils.sleep(500);
+    }
+
 
     public static void main(String[] args) {
-
 
     }
 }
