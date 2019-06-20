@@ -8,7 +8,9 @@ class Test_Kotlin {
 
 
             print("젠킨스를 테스트 해봅시다.")
-            
+            print("젠킨스를 테스트 해봅시다2.")
+            print("젠킨스를 테스트 해봅시다3.")
+
 
 
 
